@@ -1,0 +1,101 @@
+--lab2
+--ex 1
+--decode, nvl, substr, upper, lower, initcap
+SELECT first_name||' '|| last_name||' castiga '|| salary||' lunar, dar doreste '||salary*3  AS "Dorinte"
+FROM employees;
+--var2
+SELECT CONCAT(first_name,CONCAT(' ',CONCAT( last_name,CONCAT(' castiga ',CONCAT( salary,CONCAT(' lunar, dar doreste ',salary*3))))))  AS "Dorinte"
+FROM employees;
+--ex2
+
+SELECT INITCAP(first_name), UPPER(last_name), LENGTH(last_name)
+FROM employees
+WHERE UPPER(last_name) LIKE 'J%' OR UPPER(last_name) LIKE 'M%' OR UPPER(last_name) LIKE '__A%'
+ORDER BY 3;
+
+--var substr
+--lab2
+--ex 1
+--decode, nvl, substr, upper, lower, initcap
+SELECT first_name||' '|| last_name||' castiga '|| salary||' lunar, dar doreste '||salary*3  AS "Dorinte"
+FROM employees;
+--var2
+SELECT CONCAT(first_name,CONCAT(' ',CONCAT( last_name,CONCAT(' castiga ',CONCAT( salary,CONCAT(' lunar, dar doreste ',salary*3))))))  AS "Dorinte"
+FROM employees;
+--ex2
+
+SELECT INITCAP(first_name), UPPER(last_name), LENGTH(last_name)
+FROM employees
+WHERE UPPER(last_name) LIKE 'J%' OR UPPER(last_name) LIKE 'M%' OR UPPER(last_name) LIKE '__A%'
+ORDER BY 3;
+
+--var substr
+--lab2
+--ex 1
+--decode, nvl, substr, upper, lower, initcap
+SELECT first_name||' '|| last_name||' castiga '|| salary||' lunar, dar doreste '||salary*3  AS "Dorinte"
+FROM employees;
+--var2
+SELECT CONCAT(first_name,CONCAT(' ',CONCAT( last_name,CONCAT(' castiga ',CONCAT( salary,CONCAT(' lunar, dar doreste ',salary*3))))))  AS "Dorinte"
+FROM employees;
+--ex2
+
+SELECT INITCAP(first_name), UPPER(last_name), LENGTH(last_name)
+FROM employees
+WHERE UPPER(last_name) LIKE 'J%' OR UPPER(last_name) LIKE 'M%' OR UPPER(last_name) LIKE '__A%'
+ORDER BY 3;
+
+--var substr
+--lab2
+--ex 1
+--decode, nvl, substr, upper, lower, initcap
+SELECT first_name||' '|| last_name||' castiga '|| salary||' lunar, dar doreste '||salary*3  AS "Dorinte"
+FROM employees;
+--var2
+SELECT CONCAT(first_name,CONCAT(' ',CONCAT( last_name,CONCAT(' castiga ',CONCAT( salary,CONCAT(' lunar, dar doreste ',salary*3))))))  AS "Dorinte"
+FROM employees;
+--ex2
+
+SELECT INITCAP(first_name), UPPER(last_name), LENGTH(last_name)
+FROM employees
+WHERE UPPER(last_name) LIKE 'J%' OR UPPER(last_name) LIKE 'M%' OR UPPER(last_name) LIKE '__A%'
+ORDER BY 3;
+
+--var substr
+SELECT INITCAP(first_name), UPPER(last_name), LENGTH(last_name)
+FROM employees
+WHERE SUBSTR(UPPER(last_name),1,1) = 'J' OR SUBSTR(UPPER(last_name,1,1) = 'M' OR SUBSTR(UPPER(last_name),3,1) = '__A%'
+ORDER BY 3;
+
+SELECT last_name, employee_id, department_id
+FROM employees
+WHERE LOWER(TRIM(first_name)) LIKE 'steven'
+
+--ex4
+SELECT employee_id, last_name, LENGTH(last_name), INSTR(LOWER(last_name),'a',1)
+FROM employees
+WHERE LOWER(last_name) LIKE '%e';
+
+--ex5
+SELECT last_name, hire_date, salary
+FROM employees
+WHERE  MOD(ROUND(SYSDATE - hire_date),7) = 0; 
+
+--ex 6
+SELECT employee_id, last_name, salary, ROUND(salary * 1.15,2) AS "Salariu nou" , FLOOR((salary * 1.15)/ 100) AS "Numar sute"
+FROM employees
+WHERE MOD(salary, 1000)  != 0
+
+--ex7
+--RPAD adaiga spatii sau caractere pt a ajunge la o anumita
+--lungime
+SELECT last_name AS "Nume angajat", RPAD(hire_date,15,'*') AS "Data angajarii" 
+FROM employees
+WHERE commission_pct IS NOT NULL;
+
+--ex8
+SELECT TO_CHAR(SYSDATE + 30, 'MONTH/DD/YY/HH/MI/SS')
+FROM dual;
+
+SELECT TO_CHAR(SYSDATE, 'HH:MI:SS')
+FROM dual;
